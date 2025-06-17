@@ -1,0 +1,11 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+#root {
+background-color: black;
+color: white;
+}
+
+.bar {
+  transition: all 0.3s ease-in-out;
+}
