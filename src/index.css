@@ -9,3 +9,6 @@ color: white;
 .bar {
   transition: all 0.3s ease-in-out;
 }
+.bg-img{
+  z-index: -10;
+}

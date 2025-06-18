@@ -4,6 +4,8 @@ import { GiTwirlyFlower } from "react-icons/gi";
 import HoverCircle from "../Hover";
 import WhatWeDo from "../WhatWeDo";
 import CaseStudies from "../CaseStudies";
+import HowItWork from "../HowItWork";
+import Awards from "../Awards";
 
 const Home = () => {
   return (
@@ -67,6 +69,8 @@ const Home = () => {
         <WhatWeDo />
       </div>
       <CaseStudies/>
+      <HowItWork/>
+      <Awards/>
     </div>
   );
 };

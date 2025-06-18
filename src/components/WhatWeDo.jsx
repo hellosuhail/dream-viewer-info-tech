@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import { GiTwirlyFlower } from "react-icons/gi";
 import { FaStar } from "react-icons/fa6";
 
 const WhatWeDo = () => {
   const [percentage, setPercentage] = useState(0);
+   const container = useRef(null)
+  const ref = useRef(null)
+  const isInView = useInView({ root: container })
 
   useEffect(() => {
     let start = 0;
@@ -27,7 +30,7 @@ const WhatWeDo = () => {
 
   ]
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden " ref={ref}>
       <div className=" px-34 py-12">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -161,6 +164,7 @@ const WhatWeDo = () => {
           <p className="text-md px-6">Project success percentage rate</p>
           <div className="flex items-center gap-4">
             <motion.div
+           
               initial={{ width: 0, y: 40 }}
               animate={{ width: 400, y: 0 }}
               transition={{ duration: 3 }}
@@ -201,10 +205,10 @@ const WhatWeDo = () => {
 <ul className="flex  ">
     {midNav.map((item, index)=>(
     <motion.li key={index}
-   animate={{ x: [200, 0] }} // slide 0 → 100px → back to 0
+   animate={{ x: [200, 0] }} 
   transition={{
     duration: 2,
-    repeat: Infinity,      // Infinite loop
+    repeat: Infinity,      
     ease: "easeInOut"
   }}
     className="text-gray-600 hover:text-white text-6xl w-1/4">

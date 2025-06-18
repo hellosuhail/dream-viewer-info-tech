@@ -4,38 +4,42 @@ import { motion, AnimatePresence } from "framer-motion";
 const Navbar = () => {
      const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => setIsOpen(prev => !prev);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
    
   return (
-    <div>
-      <nav className="navbar flex menu-horizontal justify-between px-10 h-20 border-b-1 border-gray-300 ">
+    <>
+    
+      <div className="fixed top-0 left-0 right-0  z-10 w-full">
+      <nav className="navbar flex menu-horizontal bg-black/90 justify-between px-10 h-20 border-b-1 border-gray-300 ">
            <img src="/Logo/Logo.png" className="w-26 cursor-pointer" alt="logo" />
         <ul className="flex  justify-center gap-6">
           <li>
             <NavLink to='/'>Home</NavLink>
           </li>
           <li>
-            <a href="#">About us</a>
+            <NavLink to='/about'>About us</NavLink>
           </li>
           <li>
-            <a href="#">Service Single</a>
+            <NavLink to='/service'>Service Single</NavLink>
           </li>
           <li>
-            <a href="#">Case Studio</a>
+            <NavLink to='/'>Case Studio</NavLink>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <NavLink to='/'>Contact</NavLink>
           </li>
         </ul>
             <div className="relative z-50">
       {/* Hamburger Button with Hover Animation */}
+      
       <motion.button
         onClick={toggleMenu}
         whileHover={{ x:10, rotate: 2 }}
         whileTap={{ scale: 0.95 }}
         className="w-10 h-10 flex flex-col cursor-pointer justify-center items-center gap-1"
       >
+        
         <motion.span
           animate={isOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
           className="w-8 h-1 bg-white rounded origin-center"
@@ -74,7 +78,7 @@ const Navbar = () => {
       </AnimatePresence>
     </div>
       </nav>
-    </div>
+    </div></>
   );
 };
 

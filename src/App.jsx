@@ -7,6 +7,9 @@ import { BrowserRouter as Router , Routes , Route} from 'react-router-dom'
 import CustomCursor from './components/CustomCursor'
 import LineAnimation from './components/LineAnimation'
 import Home from './components/Routes/Home'
+import Footer from './components/Footer'
+import AboutUs from './components/Routes/Aboutus'
+import Service from './components/Routes/Service'
   
 
 function App() {
@@ -20,7 +23,10 @@ function App() {
       <CustomCursor/>
       <Routes>
         <Route path='/' element={<Home/>} />
+        <Route path='/about' element={<AboutUs/>} />
+        <Route path='/service' element={<Service/>} />
       </Routes>
+      <Footer/>
       </Router>
     </>
   )
