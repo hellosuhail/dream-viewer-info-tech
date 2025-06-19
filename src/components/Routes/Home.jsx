@@ -9,19 +9,19 @@ import Awards from "../Awards";
 
 const Home = () => {
   return (
-    <div className="">
-      <div className="w-full h-screen relative overflow-hidden">
-        <div className="flex w-1/2 pl-20 text-lg items-center pt-20 z-10 relative">
+    <div className="overflow-hidden">
+      <div className="w-full  h-screen relative overflow-hidden">
+        <div className="flex w-1/2 pl-20 text-lg items-center pt-20 z-10 overflow-hidden relative">
           <GiTwirlyFlower className="text-xl text-accent" />
-          <h1 className="ml-2">DREAMVIEWER INFITECH</h1>
+          <h1 className="ml-2">DREAMVIEWER INFOTECH</h1>
         </div>
 
-        {/* Text Animations */}
+      
         <motion.span
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="relative text-8xl cursor-context-menu font-bold left-40 z-10 block"
+          className="relative md:text-8xl overflow-auto w-70 md:w-full text-5xl left-20 cursor-context-menu font-bold md:left-40 z-10 block"
         >
           Creativity
         </motion.span>
@@ -30,7 +30,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.3 }}
-          className="absolute cursor-context-menu text-8xl top-30 left-156 font-bold "
+          className="absolute cursor-context-menu left-50 text-5xl md:text-8xl md:top-30 md:left-156 font-bold "
         >
           Is
         </motion.span>
@@ -39,7 +39,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
-          className="relative text-8xl cursor-context-menu left-140 top- font-bold z-10 block"
+          className="relative md:text-8xl text-4xl  w-70 md:w-full  overflow-hidden left-20 cursor-context-menu md:left-140 top-10 md:top-0 font-bold z-10 block"
         >
           Collective.
         </motion.span>
@@ -48,11 +48,11 @@ const Home = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="absolute left-50 w-90 top-60 cursor-context-menu text-lg z-10"
+          className="absolute left-10 md:left-50 w-90 top-70 md:top-60 cursor-context-menu text-lg z-10"
         >
-          it emerges when diverse minds converge, synergizing their unique
-          perspectives to foster innovation that surpasses the boundaries of
-          individual imagination.
+        Innovation thrives where diverse minds meet—combining perspectives to create ideas greater than any one alone.
+
+
         </motion.p>
 
         {/* Background Image Fade In */}

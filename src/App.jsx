@@ -10,6 +10,9 @@ import Home from './components/Routes/Home'
 import Footer from './components/Footer'
 import AboutUs from './components/Routes/Aboutus'
 import Service from './components/Routes/Service'
+import Contact from './components/Routes/Contact'
+import CaseStudiesSingle from './components/Routes/CaseStudiesSingle'
+import GoTopButton from './components/TopButtpon'
   
 
 function App() {
@@ -20,11 +23,14 @@ function App() {
 
     <Router>
       <Navbar/>
+      <GoTopButton/>
       <CustomCursor/>
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/about' element={<AboutUs/>} />
         <Route path='/service' element={<Service/>} />
+        <Route path='/contact' element={<Contact/>}/>
+        <Route path='/casestudies' element={<CaseStudiesSingle/>}/>
       </Routes>
       <Footer/>
       </Router>

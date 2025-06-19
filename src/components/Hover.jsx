@@ -52,10 +52,10 @@ export default function HoverCircle() {
           <FaArrowDown />
         </span>
       </motion.div>
-      <div className="relative left-90 top-40">
+      <div className="relative md:left-90 overflow-hidden top-110 mleft-20 md:top-40">
         {/* Text Line */}
         <div className="flex items-center gap-4">
-          <p className="text-6xl font-semibold">{percentage}%</p>
+          <p className="md:text-6xl text-2xl font-semibold">{percentage}%</p>
           <div className="">
             {" "}
             <p className="text-xl block">Customer </p>

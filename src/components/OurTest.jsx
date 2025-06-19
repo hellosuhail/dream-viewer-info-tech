@@ -8,22 +8,27 @@ import "swiper/css/navigation";
 
 
 const cardClients=[
-    {dis:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, ex repudiandae at voluptatem aut quia, repellendus distinctio ducimus  repellendus distinctio ducimus ",
-        name:"John Doe",
-        work:"Director",
+    {dis:"Dreamviewer Infotech transformed our outdated system into a sleek, high-performing platform. They were highly professional and paid great attention to every detail.",
+        name:"Sarah Mitchell ",
+        work:"Marketing Director",
          mar :18
     },
-       {dis:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, ex repudiandae at voluptatem aut quia, repellendus distinctio ducimus  repellendus distinctio ducimus ",
-        name:"John Doe",
+       {dis:" “The team was responsive, innovative, and totally reliable. They delivered the project perfectly, from design through to final execution. ",
+        name:"Rajesh Kumar",
         work:"Director",
          mar : 28
     },
-       {dis:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, ex repudiandae at voluptatem aut quia, repellendus distinctio ducimus  repellendus distinctio ducimus ",
+       {dis:" “We’ve worked with many tech partners, but Dreamviewer Infotech stands out for their speed, accuracy, and clear communication. A game-changer for our operations.”",
         name:"John Doe",
         work:"Director",
          mar : 18
     },
-       {dis:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, ex repudiandae at voluptatem aut quia, repellendus distinctio ducimus  repellendus distinctio ducimus ",
+       {dis:"They handled the entire project smoothly, from design to completion. We’ve already started planning our next collaboration with them.” ",
+        name:"John Doe",
+        work:"Director",
+         mar : 28
+    },
+     {dis:"What impressed us most was their dedication to our success. The team brought fresh ideas and delivered a platform that’s both powerful and easy to manage.” ",
         name:"John Doe",
         work:"Director",
          mar : 28
@@ -38,8 +43,8 @@ const OurTest = () => {
           <GiTwirlyFlower />
           Our Testimonial
         </div>
-        <h1 className="text-6xl px-68 text-center font-bold">
-          Over 500 clients and 5,000 projects across the globe.
+        <h1 className="md:text-6xl md:px-68 text-center font-bold">
+        Over 500 clients and 5,000 projects across the globe 
         </h1>
 
    
@@ -68,20 +73,20 @@ const OurTest = () => {
       <div className={`w-full flex gap-10 mt-${data.mar}`}>
         <div className="border-1 w-full cursor-grab px-8 py-6 rounded-lg border-gray-700 text-2xl">
           <div className="flex w-full gap-12 justify-between text-accent">
-            <div className="flex gap-2">
+            {/* <div className="flex gap-2">
               <FaStar />
               <FaStar />
               <FaStar />
               <FaStar />
               <FaRegStar />
-            </div>
+            </div> */}
             <img src="/Images/quote.png" alt="" className="w-20" />
           </div>
           <p className="text-sm">{data.dis}</p>
-          <h1 className="font-bold py-2 text-2xl bg-gradient-to-r from-accent via-purple-500 to-pink-500 text-transparent bg-clip-text">
+          {/* <h1 className="font-bold py-2 text-2xl bg-gradient-to-r from-accent via-purple-500 to-pink-500 text-transparent bg-clip-text">
             {data.name}
-          </h1>
-          <p className="text-lg text-pink-800">{data.work}</p>
+          </h1> */}
+          {/* <p className="text-lg text-pink-800">{data.work}</p> */}
         </div>
       </div>
     </SwiperSlide>
