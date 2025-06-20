@@ -36,9 +36,14 @@ export default function HoverCircle() {
   const offsetX = isHovered ? (mousePosition.x - baseX) / 10 : 0;
   const offsetY = isHovered ? (mousePosition.y - baseY) / 10 : 0;
 
+   const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div>
       <motion.div
+      onClick={scrollToTop}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         animate={{ x: baseX + offsetX, y: baseY + offsetY }}

@@ -5,21 +5,49 @@ import { FaArrowRight } from "react-icons/fa6";
 import { RiSubtractFill } from "react-icons/ri";
 import { MdOutlinePhoneInTalk } from "react-icons/md";
 import { FiMail } from "react-icons/fi";
+import { FaArrowDown } from "react-icons/fa6";
+import { useEffect, useState } from "react";
+
 
 const listData = [
-  "Automotive",
-  "Utilities",
-  "Education",
-  "Publishing",
-  "Healtcare",
+  "Web Development",
+  "Mobile Development",
+  "Branding Services",
+  "Digital Marketing",
+  "Blog chain development ",
+  "ERP Support Syst",
+  // "Branding Services",
+  // "Game Development"
 ];
 
 const Service = () => {
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [isHovered, setIsHovered] = useState(false);
+
+    useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  const baseX = 150;
+  const baseY = 400;
+
+  const offsetX = isHovered ? (mousePosition.x - baseX) / 10 : 0;
+  const offsetY = isHovered ? (mousePosition.y - baseY) / 10 : 0;
+
   return (
-    <div>
+    <motion.div
+         className="py-12 sm:py-20"
+         initial={{ opacity: 0, y: 40 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ duration: 1 }}
+       >
       <div className="py-8 sm:py-16">
         <div className="bg-[url(/Images/aboutbgImg.jpg)] w-full h-[40vh] sm:h-[70vh] bg-cover bg-no-repeat opacity-20" />
-        <div className="absolute top-16 sm:top-70 left-4 sm:left-120">
+        <div className="absolute  md:top-60 top-30 left-4 sm:left-120">
           <h1 className="text-3xl sm:text-5xl mb-2 sm:mb-4">Service Detail</h1>
           <p className="text-sm sm:text-lg">
             The best way is to develop and follow a plan.
@@ -40,7 +68,20 @@ const Service = () => {
               ))}
             </div>
           </div>
-
+ <motion.div
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        animate={{ x: baseX + offsetX, y: baseY + offsetY }}
+        transition={{ type: "spring", stiffness: 200, damping: 20 }}
+        className="w-32 h-32 rounded-full cursor-pointer border hover:border-accent hover:text-accent border-white absolute pointer-events-auto z-50 md:left-200 md:top-170 top-124 left-0 flex items-center justify-center  shadow-lg"
+        // style={{ left: 800, top:600 }}
+      >
+        <data className="absolute border-1 border-white hover:border-accent left-1 top-1 w-full h-32 rounded-full"></data>
+        <span className="text-lg font-semibold items-center flex  flex-col  ">
+          View PPT
+          <FaArrowDown />
+        </span>
+      </motion.div>
           {/* Main Content */}
           <div className="w-full sm:w-[70%] overflow-x-hidden max-h-[70vh] overflow-y-auto pl-0 sm:pl-12">
             <div>
@@ -187,6 +228,7 @@ const Service = () => {
           </div>
         </div>
 
+   
 
         {/*services*/}
 
@@ -271,8 +313,17 @@ const Service = () => {
 
 
         </motion.div>
-<div className="md:flex justify-center ">
-   <div className="border border-gray-800 w-full mt-12 md:w-1/4 p-4 md:p-6 h-auto md:h-[70vh] flex flex-col items-center text-center rounded-lg shadow-sm">
+
+{/*services*/}
+
+  <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="md:flex w-full  mb-0 pb-0 "
+        >{/* <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8 mt-12 px-4"> */}
+        <div className=" w-full md:flex md:h-screen">
+         <div className="border border-gray-800 mb-0 pb-0  w-full md:w-1/4 p-4 md:p-6 h-auto md:h-[70vh] flex flex-col items-center text-center rounded-lg shadow-sm">
   <img
     src="/Images/Information-Security.svg"
     className="w-24 sm:w-32 md:w-40 "
@@ -280,45 +331,77 @@ const Service = () => {
   />
 
   <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">
-    Block Chain development
+   Blog chain development 
   </h2>
 
   <ul className="space-y-3 text-sm sm:text-base md:text-lg">
     <li className="flex gap-3 items-center justify-center">
-      <FaArrowRight /> Custom Design
+      <FaArrowRight /> Data Synchronization   
     </li>
     <li className="flex gap-3 items-center justify-center">
-      <FaArrowRight /> Front-End Development
+      <FaArrowRight /> Process Automation
     </li>
     <li className="flex gap-3 items-center justify-center">
-      <FaArrowRight /> Custom Design
+      <FaArrowRight /> Content Management
     </li>
+    
   </ul>
 </div>
- <div className="border border-gray-800 w-full md:w-1/4 p-4 md:p-6 h-auto md:h-[70vh] flex flex-col items-center text-center rounded-lg shadow-sm">
-  <img
-    src="/Images/Information-Security.svg"
-    className="w-24 sm:w-32 md:w-40 mb-6"
-    alt="information-img"
-  />
 
-  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">
-  ERP Support System
-  </h2>
+     
+  {/* Mobile Development Card */}
+  <div className="border border-gray-800 w-full md:w-[45%] md:mt-12 lg:w-1/4 p-6 pb-0 rounded-lg shadow-sm md:h-[70vh] flex flex-col items-center text-center">
+    <img
+      src="/Images/Data-Synchronization.svg"
+      className="w-24 sm:w-32 md:w-36 "
+      alt="mobile-img"
+    />
+    <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold ">ERP Support System</h2>
+    <ul className="space-y-3 text-sm sm:text-base md:text-lg">
+      <li className="flex gap-3 items-center justify-center"><FaArrowRight /> Centralized System
+</li>
+      <li className="flex gap-3 items-center justify-center"><FaArrowRight /> Inventory Management
+</li>
+      <li className="flex gap-3 items-center justify-center"><FaArrowRight /> Finance & Accounting</li>
+    </ul>
+  </div>
 
-  <ul className="space-y-3 text-sm sm:text-base md:text-lg">
-    <li className="flex gap-3 items-center justify-center">
-      <FaArrowRight /> Custom Design
-    </li>
-    <li className="flex gap-3 items-center justify-center">
-      <FaArrowRight /> Front-End Development
-    </li>
-    <li className="flex gap-3 items-center justify-center">
-      <FaArrowRight /> Custom Design
-    </li>
-  </ul>
-</div>
-</div>
+  {/* Branding Services Card */}
+  <div className="border border-gray-800 w-full md:w-[45%] lg:w-1/4 p-6 pb-0 rounded-lg md:h-[70vh] shadow-sm flex flex-col items-center text-center">
+    <img
+      src="/Images/Mobile-Platforms.svg"
+      className="w-24 sm:w-32 md:w-36 mb-6"
+      alt="branding-img"
+    />
+    <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">Branding Services</h2>
+    <ul className="space-y-3 text-sm sm:text-base md:text-lg">
+      <li className="flex gap-3 items-center justify-center"><FaArrowRight /> Logo Design</li>
+      <li className="flex gap-3 items-center justify-center"><FaArrowRight /> Reputation Building</li>
+      <li className="flex gap-3 items-center justify-center"><FaArrowRight /> Visual Design</li>
+    </ul>
+  </div>
+
+  {/* Digital Marketing Card */}
+  <div className="border border-gray-800 md:mt-12 w-full md:w-[45%] lg:w-1/4 p-6 pb-0 md:h-[70vh] rounded-lg shadow-sm flex flex-col items-center text-center">
+    <img
+      src="/Images/Process-Automation.svg"
+      className="w-24 sm:w-32 md:w-36 mb-6"
+      alt="digital-img"
+    />
+    <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">Game Development</h2>
+    <ul className="space-y-3 text-sm sm:text-base md:text-lg">
+      <li className="flex gap-3 items-center justify-center"><FaArrowRight /> Cross-Platform Compatibility</li>
+      <li className="flex gap-3 items-center justify-center"><FaArrowRight />  In-game Monetization</li>
+      <li className="flex gap-3 items-center justify-center"><FaArrowRight />Game Development (2D/3D)</li>
+    </ul>
+  </div></div>
+{/* </div> */}
+
+
+
+        </motion.div>
+
+
         {/* Bottom Section */}
         <div className="flex flex-col sm:flex-row px-4 sm:px-20 gap-6">
           {/* Contact Info Box */}
@@ -355,7 +438,7 @@ const Service = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

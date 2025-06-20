@@ -2,9 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
 import { GiTwirlyFlower } from "react-icons/gi";
 import { FaArrowDown, FaArrowRight } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 const CaseStudies = () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
     const [isHovered, setIsHovered] = useState(false);
+
+    const navigate =useNavigate()
+const navigateHandle =()=>{
+  navigate('/casestudies')
+}
 
     useEffect(() => {
       const handleMouseMove = (e) => {
@@ -23,21 +29,28 @@ const CaseStudies = () => {
     const offsetY = isHovered ? (mousePosition.y - baseY) / 10 : 0;
   const cardData =[
     {
+      img:"/Images/img1.jpg",
       title:"titleOne",
       dis:"Some people will tell you there are four while others may tell you there are eight."
     },
       {
+      img:"/Images/img2.webp",
+
       title:"titleOne",
       dis:"Some people will tell you there are four while others may tell you there are eight."
     },
       {
+      img:"/Images/img3.jpg",
+
       title:"titleOne",
       dis:"Some people will tell you there are four while others may tell you there are eight."
     },
   ]
+
+  
   return (
    <div className="px-4 md:px-16">
-  <div className="flex flex-col justify-center items-center py-16 md:py-28">
+  <div className="flex flex-col justify-center items-center  md:py-28">
     <div className="flex items-center gap-2 text-xl md:text-2xl text-accent">
       <GiTwirlyFlower /> Case Studies
     </div>
@@ -53,7 +66,7 @@ const CaseStudies = () => {
           className="w-full sm:w-72 md:w-64 h-[60vh] relative group cursor-pointer overflow-hidden rounded-xl shadow-2xl transform transition-transform duration-300 hover:scale-105"
         >
           <img
-            src="/Images/card1.png"
+            src={data.img}
             alt="Card Image"
             className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
           />
@@ -81,12 +94,13 @@ const CaseStudies = () => {
 
   {/* Motion Circle - Hide on small screens */}
   <motion.div
+  onClick={navigateHandle}
     onMouseEnter={() => setIsHovered(true)}
     onMouseLeave={() => setIsHovered(false)}
     animate={{ x: baseX + offsetX, y: baseY + offsetY }}
     transition={{ type: "spring", stiffness: 200, damping: 20 }}
-    className="hidden md:flex w-32 h-32 rounded-full cursor-pointer border hover:border-accent hover:text-accent border-white absolute pointer-events-auto z-50 items-center justify-center shadow-lg"
-    style={{ left: 550, top: 3550 }}
+    className="hidden md:flex w-32 h-32 md:top-850 md:left-130 rounded-full cursor-pointer border hover:border-accent hover:text-accent border-white absolute pointer-events-auto z-50 items-center justify-center shadow-lg"
+    
   >
     <data className="absolute border-1 border-white hover:border-accent left-1 top-1 w-full h-32 rounded-full"></data>
     <span className="text-base font-semibold flex flex-col items-center">

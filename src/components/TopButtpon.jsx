@@ -5,11 +5,11 @@ import { motion, useAnimation, useScroll, useSpring } from "framer-motion";
 export default function ScrollToTopWithProgress() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Scroll Y progress (0 to 1)
+
   const { scrollYProgress } = useScroll();
   const strokeProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 20 });
 
-  // Show button after scrollY > 300
+  
   useEffect(() => {
     const toggleVisibility = () => {
       setIsVisible(window.scrollY > 300);
@@ -26,7 +26,7 @@ export default function ScrollToTopWithProgress() {
     isVisible && (
       <motion.button
         onClick={scrollToTop}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-md flex items-center justify-center"
+        className="fixed bottom-6 cursor-pointer right-6 z-50 w-14 h-14 rounded-full shadow-md flex items-center justify-center"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >

@@ -20,6 +20,7 @@ const scrolData = [
         img:"/Images/scrollImg.png"
   },
    {
+      img:"/Images/img1.jpg",
     title: "Meet the team",
     dis: "““Nothing changes until something moves.” – Robert RingerOur team is the movement behind every innovation. Passionate, skilled, and driven—we’re the force that turns ideas into impact.",
     ulData:["E-commerce strategy", "Business intelligence"],
@@ -51,7 +52,7 @@ const HowItWork = () => {
   const offsetY = isHovered ? (mousePosition.y - baseY) / 10 : 0;
 
   return (
-  <div className="mt-20 md:mt-40 px-4 md:px-22 py-12 w-full">
+  <div className="  px-4 md:px-22  w-full">
   <div className="flex flex-col md:flex-row">
     
     {/* LEFT SECTION */}
@@ -71,7 +72,7 @@ const HowItWork = () => {
       </p>
 
       {/* Hidden on small screens */}
-      <motion.div
+      {/* <motion.div
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         animate={{ x: baseX + offsetX, y: baseY + offsetY }}
@@ -84,7 +85,7 @@ const HowItWork = () => {
           Get Started
           <FaArrowDown />
         </span>
-      </motion.div>
+      </motion.div> */}
     </div>
 
     {/* RIGHT SECTION */}
@@ -108,7 +109,7 @@ const HowItWork = () => {
           ))}
 
           <div className="w-full mt-4 flex justify-center">
-            <img src="/Images/scrollImg.png" alt="img" className="w-64 md:w-80" />
+            <img src={data.img} alt="img" className="w-64 md:w-80" />
           </div>
         </div>
       ))}

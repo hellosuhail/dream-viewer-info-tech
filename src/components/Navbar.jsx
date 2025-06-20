@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { IoCloseSharp } from 'react-icons/io5';
 import { RiFacebookCircleLine } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa";
-
+  
 import { FaInstagram } from "react-icons/fa";
 import { RiMenu3Line } from "react-icons/ri";
 import { FaDribbble } from "react-icons/fa";
@@ -25,7 +25,7 @@ const Navbar = () => {
             <li><NavLink to="/">Home</NavLink></li>
             <li><NavLink to="/about">About Us</NavLink></li>
             <li><NavLink to="/service">Service</NavLink></li>
-            <li><NavLink to="/casestudies">Case Studio</NavLink></li>
+            <li><NavLink to="/casestudies">Case Studies</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
           </ul>
 
@@ -73,7 +73,7 @@ const Navbar = () => {
                   <li><NavLink to="/" onClick={toggleSidebar}>Home</NavLink></li>
                   <li><NavLink to="/about" onClick={toggleSidebar}>About Us</NavLink></li>
                   <li><NavLink to="/service" onClick={toggleSidebar}>Service Single</NavLink></li>
-                  <li><NavLink to="/casestudies" onClick={toggleSidebar}>Case Studio</NavLink></li>
+                  <li><NavLink to="/casestudies" onClick={toggleSidebar}>Case Studies</NavLink></li>
                   <li><NavLink to="/contact" onClick={toggleSidebar}>Contact</NavLink></li>
                 </ul>
 

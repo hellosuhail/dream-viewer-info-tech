@@ -33,7 +33,7 @@ const WhatWeDo = () => {
   ];
   return (
     <div className="overflow-hidden " ref={ref}>
-      <div className=" md:px-34 md:py-12">
+      <div className=" md:px-34 ">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,32 +62,33 @@ const WhatWeDo = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="md:flex w-full py-10 "
+          className="md:flex w-full  "
         >{/* <div className="flex flex-col md:flex-row md:flex-wrap justify-center gap-8 mt-12 px-4"> */}
         <div className=" w-full md:flex md:h-screen">
-         <div className="border border-gray-800 w-full md:w-1/4 p-4 md:p-6 h-auto md:h-[70vh] flex flex-col items-center text-center rounded-lg shadow-sm">
-  <img
-    src="/Images/Information-Security.svg"
-    className="w-24 sm:w-32 md:w-40 mb-6"
-    alt="information-img"
-  />
-
-  <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">
-    Web Development
-  </h2>
-
-  <ul className="space-y-3 text-sm sm:text-base md:text-lg">
-    <li className="flex gap-3 items-center justify-center">
-      <FaArrowRight /> Custom Design
-    </li>
-    <li className="flex gap-3 items-center justify-center">
-      <FaArrowRight /> Front-End Development
-    </li>
-    <li className="flex gap-3 items-center justify-center">
-      <FaArrowRight /> Custom Design
-    </li>
-  </ul>
-</div>
+         <div className="border border-gray-800 mb-0 pb-0  w-full md:w-1/4 p-4 md:p-6 h-auto md:h-[70vh] flex flex-col items-center text-center rounded-lg shadow-sm">
+          <img
+            src="/Images/Information-Security.svg"
+            className="w-4 sm:w-32 md:w-40 "
+            alt="information-img"
+          />
+        
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">
+            Web Development
+          </h2>
+        
+          <ul className="space-y-3 text-sm sm:text-base md:text-lg">
+            <li className="flex gap-3 items-center justify-center">
+              <FaArrowRight /> Custom Design
+            </li>
+            <li className="flex gap-3 items-center justify-center">
+              <FaArrowRight /> Front-End Development
+            </li>
+            <li className="flex gap-3 items-center justify-center">
+              <FaArrowRight /> Custom Design
+            </li>
+          </ul>
+        </div>
+        
 
      
   {/* Mobile Development Card */}
@@ -138,7 +139,7 @@ const WhatWeDo = () => {
 
         </motion.div>
       </div>
-      <div className="md:flex gap-6 py-20 px-34 bg-[#020307]">
+      <div className="md:flex gap-6 py-2 px-34 bg-[#020307]">
         <img
           src="https://themes.potenzaglobalsolutions.com/html/it-infinite/images/about/about-04.jpg"
           className=""

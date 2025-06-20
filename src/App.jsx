@@ -13,6 +13,8 @@ import Service from './components/Routes/Service'
 import Contact from './components/Routes/Contact'
 import CaseStudiesSingle from './components/Routes/CaseStudiesSingle'
 import GoTopButton from './components/TopButtpon'
+import WhatsApp from './components/WhatsApp'
+import Welcome from './components/Welcome'
   
 
 function App() {
@@ -22,9 +24,12 @@ function App() {
    <LineAnimation/>
 
     <Router>
+      <Welcome/>
       <Navbar/>
       <GoTopButton/>
+      <WhatsApp/>
       <CustomCursor/>
+
       <Routes>
         <Route path='/' element={<Home/>} />
         <Route path='/about' element={<AboutUs/>} />

@@ -44,25 +44,25 @@ const cardData = [
 
 const staffData = [
   {
-    img: "/Images/card1.png",
+    img: "/Images/AvinashSir.png",
     name: " Avinash ",
     position: "CEO & Founder",
     profile: ["NO", "VAR", "EA", "CH"],
   },
   {
-    img: "/Images/card1.png",
+    img: "/Images/BadalBhati.jpeg",
     name: "Badal Bhati",
     position: "Co-Founder",
     profile: ["ED", "U", "HI", "VE"],
   },
   {
-    img: "/Images/card1.png",
+    img: "/Images/Jishan1.png",
     name: "Jishan ",
     position: " Senior Developer",
     profile: ["ME", "DC", "OR", "E"],
   },
   {
-    img: "/Images/card1.png",
+    img: "/Images/Mam.png",
     name: "Sanya Sharma  ",
     position: "Business Development Manager",
     profile: ["GR", "EEN", "NE", "ST"],
@@ -96,6 +96,11 @@ const AboutUs = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
+
+  const goToAbout=()=>{
+    window.scrollTo({top:430, behavior:"smooth"})
+  }
+
   const baseX = 150;
   const baseY = 400;
 
@@ -110,11 +115,25 @@ const AboutUs = () => {
       <div className="bg-[url(/Images/aboutbgImg.jpg)] w-full h-[70vh] bg-cover bg-no-repeat opacity-20 ">
         {" "}
       </div>
-      <div className=" absolute top-70 left-120">
-        <h1 className="text-5xl mb-4">About ITinfinite</h1>
+      <div className=" absolute md:top-60 top-30 right-20 md:left-120">
+        <h1 className="md:text-5xl text-3xl mb-4">About ITinfinite</h1>
         <p>Our Expertise. Know more about what we do</p>
       </div>
-
+ <motion.div
+ onClick={goToAbout}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                animate={{ x: baseX + offsetX, y: baseY + offsetY }}
+                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+                className="w-52 h-52 rounded-full cursor-pointer border hover:border-accent hover:text-accent border-white absolute pointer-events-auto md:left-90 right-70 top-0 md:top-180 z-50 flex items-center justify-center  shadow-lg"
+                // style={{ left: 320, top: 700 }}
+              >
+                <data className="absolute border-1 border-white hover:border-accent left-1 top-1 w-full h-52 rounded-full"></data>
+                <span className="text-lg font-semibold items-center flex  flex-col  ">
+                  About Us
+                  <FaArrowDown />
+                </span>
+              </motion.div>
       <div className="md:p-28 px-4 md:flex">
         <div className="">
           <div className="flex text-xl text-accent gap-4 py-2 px-2 items-center">
@@ -131,20 +150,7 @@ const AboutUs = () => {
               At Dreamviewer Infotech, we believe in creating digital solutions that not only meet expectations but exceed them. From innovative web development to cutting-edge software design, our mission is to deliver seamless experiences that empower your business to grow and thrive. We combine technology, creativity, and strategy to bring your vision to life—because your success is our success.
 
               </p>
-              <motion.div
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                animate={{ x: baseX + offsetX, y: baseY + offsetY }}
-                transition={{ type: "spring", stiffness: 200, damping: 20 }}
-                className="w-52 h-52 rounded-full cursor-pointer border hover:border-accent hover:text-accent border-white absolute pointer-events-auto z-50 flex items-center justify-center  shadow-lg"
-                style={{ left: 320, top: 700 }}
-              >
-                <data className="absolute border-1 border-white hover:border-accent left-1 top-1 w-full h-52 rounded-full"></data>
-                <span className="text-lg font-semibold items-center flex  flex-col  ">
-                  About Us
-                  <FaArrowDown />
-                </span>
-              </motion.div>
+             
             </div>
           </div>
           <div className="mt-28">
@@ -248,7 +254,7 @@ const AboutUs = () => {
                   <img
                     src={data.img}
                     alt={data.name}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full bg-white object-cover transform group-hover:scale-110 transition-transform duration-500"
                   />
 
             

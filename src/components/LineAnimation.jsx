@@ -4,13 +4,13 @@ import { motion} from "framer-motion";
 const LineAnimation = () => {
      const [key, setKey] = useState(0);
 
-  // Update key every 3 seconds to restart animation
+
   useEffect(() => {
     const interval = setInterval(() => {
       setKey(prev => prev + 1);
     }, 3000); // 3000ms = 3 seconds
     return () => clearInterval(interval);
-  }, []);
+  }, []); 
   return (
     <div>
          <div className="w-0.5 h-screen absolute left-30 bg-gray-400 opacity-10"/>
